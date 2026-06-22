@@ -645,7 +645,7 @@ document.getElementById('resvForm').addEventListener('submit', function(e){
 if (window.gsap){
   gsap.registerPlugin(ScrollTrigger);
   if (!reduce && window.Lenis){
-    var lenis = new Lenis({ duration:1.2, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true });
+    var lenis = new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
     gsap.ticker.add(function(t){ lenis.raf(t*1000); });
     gsap.ticker.lagSmoothing(0);
     lenis.on('scroll', ScrollTrigger.update);
