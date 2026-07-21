@@ -61,6 +61,11 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+/* Lenis CSS (nedostajao) — bez ovoga nativni smooth re-animira svaki
+   Lenisov frame i scroll zapinje ili stane. */
+html.lenis{scroll-behavior:auto!important}
+html.lenis,html.lenis body{height:auto}
+html.lenis [data-lenis-prevent]{overscroll-behavior:contain}
 body{
   font-family:var(--font-body);
   background:var(--paper);
